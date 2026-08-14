@@ -1,0 +1,761 @@
+/* ==================================================
+   BRUTAL & ELEGANTE
+   CSS - LOJA DE BOTAS TEXANAS
+================================================== */
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f7f1e8;
+    color: #3b2418;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   SELEÇÃO DE TEXTO
+========================= */
+
+::selection {
+    background: #8b5e34;
+    color: #fff;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+header {
+    min-height: 480px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 70px 20px;
+
+    color: #f8e7bd;
+
+    background:
+        linear-gradient(
+            rgba(55, 30, 15, 0.90),
+            rgba(55, 30, 15, 0.90)
+        ),
+        url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1600&q=80");
+
+    background-size: cover;
+    background-position: center;
+
+    border-bottom: 5px solid #b88952;
+}
+
+
+/* Logo */
+
+header .logo {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+
+    animation: aparecer 1s ease;
+}
+
+
+/* Título */
+
+header h1 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(2rem, 5vw, 3.2rem);
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    color: #f4d9a5;
+
+    text-shadow:
+        2px 2px 5px rgba(0, 0, 0, 0.5);
+
+    animation: aparecer 1.2s ease;
+}
+
+
+/* Subtítulo */
+
+header p {
+    margin-top: 12px;
+
+    max-width: 650px;
+
+    font-size: 1.15rem;
+
+    color: #ead7bd;
+
+    animation: aparecer 1.4s ease;
+}
+
+
+/* Pequena etiqueta */
+
+.subtitulo {
+    display: inline-block;
+
+    margin-top: 25px;
+
+    padding: 10px 22px;
+
+    border: 1px solid #c69b63;
+
+    border-radius: 50px;
+
+    color: #f4d9a5;
+
+    font-size: 0.9rem;
+
+    letter-spacing: 1px;
+
+    background: rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 60px 20px;
+}
+
+
+/* =========================
+   TÍTULO DA SEÇÃO
+========================= */
+
+.titulo-secao {
+    position: relative;
+
+    text-align: center;
+
+    margin-bottom: 50px;
+
+    color: #4a2c1a;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(1.7rem, 4vw, 2.3rem);
+
+    letter-spacing: 1px;
+}
+
+
+/* Linha decorativa */
+
+.titulo-secao::after {
+    content: "";
+
+    display: block;
+
+    width: 80px;
+    height: 4px;
+
+    margin: 15px auto 0;
+
+    background: #b88952;
+
+    border-radius: 10px;
+}
+
+
+/* =========================
+   GRID DE PRODUTOS
+========================= */
+
+.grid-produtos {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(270px, 1fr)
+        );
+
+    gap: 30px;
+}
+
+
+/* =========================
+   CARD DO PRODUTO
+========================= */
+
+.card-produto {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #ffffff;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    border: 1px solid #ead9c5;
+
+    box-shadow:
+        0 8px 25px rgba(62, 39, 23, 0.10);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Hover */
+
+.card-produto:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 18px 40px rgba(62, 39, 23, 0.20);
+}
+
+
+/* =========================
+   IMAGEM DO PRODUTO
+========================= */
+
+.imagem-produto {
+    position: relative;
+
+    width: 100%;
+    height: 330px;
+
+    overflow: hidden;
+
+    background: #eee;
+}
+
+
+/* Imagem */
+
+.imagem-produto img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform 0.5s ease;
+}
+
+
+/* Zoom ao passar o mouse */
+
+.card-produto:hover
+.imagem-produto img {
+    transform: scale(1.08);
+}
+
+
+/* =========================
+   ETIQUETA DO PRODUTO
+========================= */
+
+.etiqueta {
+    position: absolute;
+
+    top: 15px;
+    left: 15px;
+
+    z-index: 2;
+
+    padding: 7px 14px;
+
+    border-radius: 30px;
+
+    background: #8b3a24;
+
+    color: #ffffff;
+
+    font-size: 0.75rem;
+
+    font-weight: bold;
+
+    letter-spacing: 0.5px;
+
+    box-shadow:
+        0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================
+   INFORMAÇÕES
+========================= */
+
+.info-produto {
+    display: flex;
+    flex-direction: column;
+
+    padding: 25px;
+
+    flex: 1;
+}
+
+
+/* Nome */
+
+.info-produto h3 {
+    margin-bottom: 10px;
+
+    color: #3e2723;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 1.35rem;
+}
+
+
+/* Descrição */
+
+.detalhes {
+    margin-bottom: 12px;
+
+    color: #765d4d;
+
+    font-size: 0.9rem;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   COR
+========================= */
+
+.cor {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 12px;
+
+    color: #654a3b;
+
+    font-size: 0.9rem;
+}
+
+
+/* Bolinha */
+
+.bolinha-cor {
+    width: 18px;
+    height: 18px;
+
+    display: inline-block;
+
+    border-radius: 50%;
+
+    border: 2px solid #ffffff;
+
+    box-shadow:
+        0 0 0 1px #aaa;
+}
+
+
+/* Cores */
+
+.marrom {
+    background: #6b351e;
+}
+
+.preto {
+    background: #151515;
+}
+
+.caramelo {
+    background: #b87942;
+}
+
+.bege {
+    background: #d6b58c;
+}
+
+.branco {
+    background: #f5f5f5;
+}
+
+
+/* =========================
+   TAMANHOS
+========================= */
+
+.tamanhos {
+    margin-bottom: 15px;
+
+    color: #765d4d;
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================
+   PREÇO ANTIGO
+========================= */
+
+.preco-antigo {
+    color: #999999;
+
+    font-size: 0.9rem;
+
+    text-decoration: line-through;
+}
+
+
+/* =========================
+   PREÇO
+========================= */
+
+.preco {
+    margin: 4px 0 10px;
+
+    color: #276b3a;
+
+    font-size: 1.8rem;
+
+    font-weight: 800;
+}
+
+
+/* =========================
+   PIX
+========================= */
+
+.pix {
+    display: inline-block;
+
+    width: fit-content;
+
+    margin-bottom: 18px;
+
+    padding: 5px 9px;
+
+    border-radius: 5px;
+
+    background: #e5f5e8;
+
+    color: #276b3a;
+
+    font-size: 0.8rem;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   BOTÃO WHATSAPP
+========================= */
+
+.btn-whatsapp {
+    display: block;
+
+    width: 100%;
+
+    margin-top: auto;
+
+    padding: 14px;
+
+    border-radius: 8px;
+
+    background: #25d366;
+
+    color: #ffffff;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition:
+        background 0.3s ease,
+        transform 0.2s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Hover */
+
+.btn-whatsapp:hover {
+    background: #128c7e;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 15px rgba(18, 140, 126, 0.3);
+}
+
+
+/* Clique */
+
+.btn-whatsapp:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================
+   BANNER
+========================= */
+
+.banner {
+    margin-top: 70px;
+
+    padding: 60px 25px;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            rgba(74, 44, 17, 0.91),
+            rgba(74, 44, 17, 0.91)
+        ),
+        url("https://images.unsplash.com/photo-1524388051271-1d5f8d4b7c6c?auto=format&fit=crop&w=1400&q=80");
+
+    background-size: cover;
+
+    background-position: center;
+
+    box-shadow:
+        0 10px 30px rgba(62, 39, 23, 0.15);
+}
+
+
+.banner h2 {
+    margin-bottom: 10px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 2rem;
+
+    color: #f4d9a5;
+}
+
+
+.banner p {
+    color: #ead7bd;
+
+    font-size: 1rem;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer {
+    padding: 35px 20px;
+
+    margin-top: 30px;
+
+    background: #2b1a11;
+
+    color: #d7c3ad;
+
+    text-align: center;
+}
+
+
+footer strong {
+    color: #e8c78d;
+
+    font-size: 1.1rem;
+}
+
+
+footer p {
+    margin: 6px;
+}
+
+
+/* =========================
+   LINK
+========================= */
+
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+
+/* TABLET */
+
+@media (max-width: 768px) {
+
+    header {
+        min-height: 420px;
+
+        padding: 50px 20px;
+    }
+
+    header h1 {
+        letter-spacing: 2px;
+    }
+
+    .container {
+        padding: 45px 15px;
+    }
+
+    .grid-produtos {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+        gap: 20px;
+    }
+
+    .imagem-produto {
+        height: 280px;
+    }
+
+    .info-produto {
+        padding: 20px;
+    }
+
+}
+
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    header {
+        min-height: 390px;
+
+        padding: 45px 15px;
+    }
+
+    header .logo {
+        font-size: 2.5rem;
+    }
+
+    header h1 {
+        font-size: 1.9rem;
+
+        letter-spacing: 1.5px;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .subtitulo {
+        font-size: 0.75rem;
+
+        padding: 8px 14px;
+    }
+
+    .container {
+        padding: 40px 15px;
+    }
+
+    .titulo-secao {
+        margin-bottom: 30px;
+
+        font-size: 1.7rem;
+    }
+
+    .grid-produtos {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+    .imagem-produto {
+        height: 330px;
+    }
+
+    .banner {
+        margin-top: 45px;
+
+        padding: 45px 20px;
+    }
+
+    .banner h2 {
+        font-size: 1.6rem;
+    }
+
+}
+
+
+/* CELULARES MUITO PEQUENOS */
+
+@media (max-width: 380px) {
+
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    .imagem-produto {
+        height: 290px;
+    }
+
+    .preco {
+        font-size: 1.6rem;
+    }
+
+}

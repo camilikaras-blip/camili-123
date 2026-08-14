@@ -1,13 +1,13 @@
-<DOCTYPE html>
-<hrml lang="pt-BR">
-    <!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sua Loja Country | Botas Texanas Femininas</title>
+
+    <title>Brutal & Elegante | Botas Texanas Femininas</title>
+
     <style>
-        /* Estilos Gerais (Visual Country Moderno) */
         * {
             margin: 0;
             padding: 0;
@@ -16,142 +16,658 @@
         }
 
         body {
-            background-color: #fcf8f2;
-            color: #3e2723;
+            background: #f7f1e8;
+            color: #3b2418;
         }
 
-        /* Cabeçalho */
+        /* =========================
+           CABEÇALHO
+        ========================= */
+
         header {
-            background-color: #4a2c11;
-            color: #f3e5ab;
+            background:
+                linear-gradient(rgba(55, 30, 15, 0.92), rgba(55, 30, 15, 0.92)),
+                url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            color: #f8e7bd;
             text-align: center;
-            padding: 2rem 1rem;
-            border-bottom: 4px solid #8d6e63;
+            padding: 70px 20px;
+            border-bottom: 5px solid #b88952;
+        }
+
+        header .logo {
+            font-size: 3rem;
+            margin-bottom: 10px;
         }
 
         header h1 {
-            font-size: 2.5rem;
-            letter-spacing: 2px;
+            font-size: 2.8rem;
+            letter-spacing: 3px;
             text-transform: uppercase;
+            font-family: Georgia, serif;
         }
 
         header p {
-            font-size: 1.1rem;
-            margin-top: 5px;
-            color: #d7ccc8;
+            font-size: 1.15rem;
+            margin-top: 12px;
+            color: #ead7bd;
         }
 
-        /* Container Principal */
+        .subtitulo {
+            display: inline-block;
+            margin-top: 22px;
+            padding: 10px 22px;
+            border: 1px solid #c69b63;
+            border-radius: 30px;
+            color: #f4d9a5;
+            font-size: 0.95rem;
+        }
+
+        /* =========================
+           CONTAINER
+        ========================= */
+
         .container {
             max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+            margin: 50px auto;
+            padding: 0 20px;
         }
 
         .titulo-secao {
             text-align: center;
-            margin-bottom: 2rem;
-            font-size: 1.8rem;
-            color: #4a2c11;
-            border-bottom: 2px solid #d7ccc8;
-            padding-bottom: 10px;
+            margin-bottom: 40px;
+            font-size: 2.2rem;
+            color: #4a2c1a;
+            font-family: Georgia, serif;
         }
 
-        /* Grade de Produtos */
+        .titulo-secao::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #b88952;
+            margin: 15px auto 0;
+            border-radius: 5px;
+        }
+
+        /* =========================
+           GRID
+        ========================= */
+
         .grid-produtos {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            gap: 30px;
         }
 
-        /* Card do Produto */
+        /* =========================
+           CARD
+        ========================= */
+
         .card-produto {
-            background-color: #fff;
-            border-radius: 8px;
+            background: #fff;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            box-shadow: 0 8px 25px rgba(62, 39, 23, 0.12);
+            transition: all 0.3s ease;
+            border: 1px solid #ead9c5;
         }
 
         .card-produto:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(62, 39, 23, 0.2);
         }
 
-        .card-produto img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
+        .imagem-produto {
+            position: relative;
+            height: 330px;
+            overflow: hidden;
+            background: #eee;
         }
+
+        .imagem-produto img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card-produto:hover .imagem-produto img {
+            transform: scale(1.06);
+        }
+
+        .etiqueta {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #8b3a24;
+            color: white;
+            padding: 7px 13px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* =========================
+           INFORMAÇÕES
+        ========================= */
 
         .info-produto {
-            padding: 1.2rem;
-            text-align: center;
+            padding: 25px;
         }
 
         .info-produto h3 {
-            font-size: 1.3rem;
+            font-size: 1.35rem;
             color: #3e2723;
-            margin-bottom: 0.5rem;
+            margin-bottom: 10px;
+            font-family: Georgia, serif;
         }
 
-        .info-produto .detalhes {
+        .detalhes {
+            color: #765d4d;
             font-size: 0.9rem;
-            color: #6d4c41;
-            margin-bottom: 0.8rem;
+            line-height: 1.6;
+            margin-bottom: 12px;
         }
 
-        .info-produto .preco {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: #2e7d32;
-            margin-bottom: 1rem;
+        .cor {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            color: #654a3b;
         }
 
-        /* Botão do WhatsApp */
-        .btn-whatsapp {
+        .bolinha-cor {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
             display: inline-block;
-            width: 100%;
-            background-color: #25d366;
-            color: #fff;
-            text-decoration: none;
-            padding: 0.8rem 0;
-            border-radius: 5px;
+            border: 2px solid #fff;
+            box-shadow: 0 0 0 1px #aaa;
+        }
+
+        .marrom {
+            background: #6b351e;
+        }
+
+        .preto {
+            background: #151515;
+        }
+
+        .caramelo {
+            background: #b87942;
+        }
+
+        .tamanhos {
+            font-size: 0.85rem;
+            color: #765d4d;
+            margin-bottom: 15px;
+        }
+
+        /* =========================
+           PREÇO
+        ========================= */
+
+        .preco-antigo {
+            color: #999;
+            text-decoration: line-through;
+            font-size: 0.9rem;
+        }
+
+        .preco {
+            font-size: 1.8rem;
             font-weight: bold;
-            transition: background-color 0.2s;
+            color: #276b3a;
+            margin: 5px 0 18px;
+        }
+
+        .pix {
+            display: inline-block;
+            color: #276b3a;
+            background: #e5f5e8;
+            padding: 5px 9px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+        }
+
+        /* =========================
+           BOTÃO
+        ========================= */
+
+        .btn-whatsapp {
+            display: block;
+            width: 100%;
+            background: #25d366;
+            color: white;
+            text-decoration: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s ease;
         }
 
         .btn-whatsapp:hover {
-            background-color: #128c7e;
+            background: #128c7e;
+            transform: scale(1.02);
         }
 
-        /* Rodapé */
-        footer {
-            background-color: #3e2723;
-            color: #d7ccc8;
+        /* =========================
+           BANNER
+        ========================= */
+
+        .banner {
+            margin-top: 60px;
+            padding: 45px 25px;
             text-align: center;
-            padding: 1.5rem;
-            margin-top: 3rem;
+            border-radius: 15px;
+
+            background:
+                linear-gradient(rgba(74, 44, 17, 0.9), rgba(74, 44, 17, 0.9)),
+                url("https://images.unsplash.com/photo-1524388051271-1d5f8d4b7c6c?auto=format&fit=crop&w=1400&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            color: white;
+        }
+
+        .banner h2 {
+            font-family: Georgia, serif;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .banner p {
+            color: #ead7bd;
+        }
+
+        /* =========================
+           RODAPÉ
+        ========================= */
+
+        footer {
+            background: #2b1a11;
+            color: #d7c3ad;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+
+        footer strong {
+            color: #e8c78d;
+        }
+
+        footer p {
+            margin: 6px;
+        }
+
+        /* =========================
+           RESPONSIVO
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 50px 15px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header .logo {
+                font-size: 2.3rem;
+            }
+
+            .titulo-secao {
+                font-size: 1.7rem;
+            }
+
+            .imagem-produto {
+                height: 300px;
+            }
         }
     </style>
 </head>
+
 <body>
 
+    <!-- =========================
+         CABEÇALHO
+    ========================== -->
+
     <header>
-        <h1>👢 Brutal & Elegante</h1>
-        <p>As melhores botas texanas femininas em couro legítimo</p>
+
+        <div class="logo">🤠 👢</div>
+
+        <h1>Brutal & Elegante</h1>
+
+        <p>
+            Botas Texanas Femininas para mulheres de atitude
+        </p>
+
+        <span class="subtitulo">
+            ✦ ESTILO • QUALIDADE • AUTENTICIDADE ✦
+        </span>
+
     </header>
 
+
+    <!-- =========================
+         PRODUTOS
+    ========================== -->
+
     <main class="container">
-        <h2 class="titulo-secao">Coleção Botas Texanas</h2>
+
+        <h2 class="titulo-secao">
+            Coleção Botas Texanas
+        </h2>
+
 
         <div class="grid-produtos">
 
+
+            <!-- PRODUTO 1 -->
+
             <div class="card-produto">
-                <img src="https://via.placeholder.com/400x400?text=Texana+Bordada" alt="Bota Texana Bordada">
+
+                <div class="imagem-produto">
+
+                    <span class="etiqueta">
+                        MAIS VENDIDA
+                    </span>
+
+                    <img
+                        src="https://images.tcdn.com.br/img/img_prod/548537/bota_feminina_vimar_boots_fossil_castanho_11269_38653_1_d79d79031f90bc3fd83c01b46a3f93e4.jpg"
+                        alt="Bota Texana Feminina Marrom Bordada"
+                    >
+
+                </div>
+
                 <div class="info-produto">
-                    <h3>Texana Bordada Flor</h3>
-                    <p class="detalhes">Couro Bovino | Bico Quadrado | Tam: 34 ao 39</p>
+
+                    <h3>
+                        Texana Bordada Flor
+                    </h3>
+
+                    <p class="detalhes">
+                        Couro bovino • Cano médio •
+                        Bico fino • Salto baixo
+                    </p>
+
+                    <div class="cor">
+                        Cor:
+                        <span class="bolinha-cor marrom"></span>
+                        Marrom
+                    </div>
+
+                    <p class="tamanhos">
+                        📏 Tamanhos disponíveis:
+                        <strong>34 ao 40</strong>
+                    </p>
+
+                    <span class="preco-antigo">
+                        De R$ 499,90
+                    </span>
+
                     <p class="preco">
+                        R$ 399,90
+                    </p>
+
+                    <span class="pix">
+                        💚 5% OFF no Pix
+                    </span>
+
+                    <a
+                        class="btn-whatsapp"
+                        href="https://wa.me/5511999999999?text=Olá!%20Tenho%20interesse%20na%20Texana%20Bordada%20Flor."
+                        target="_blank"
+                    >
+                        💬 Comprar pelo WhatsApp
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUTO 2 -->
+
+            <div class="card-produto">
+
+                <div class="imagem-produto">
+
+                    <span class="etiqueta">
+                        NOVIDADE
+                    </span>
+
+                    <img
+                        src="https://images.vistella.com.br/products/bota-feminina-texana-marrom-western-1.jpg"
+                        alt="Bota Texana Marrom Western"
+                        onerror="this.src='https://vistella.com.br/cdn/shop/files/bota-feminina-texana-marrom-western.jpg'"
+                    >
+
+                </div>
+
+                <div class="info-produto">
+
+                    <h3>
+                        Texana Western Marrom
+                    </h3>
+
+                    <p class="detalhes">
+                        Estilo western • Cano médio •
+                        Bordado elegante • Salto confortável
+                    </p>
+
+                    <div class="cor">
+                        Cor:
+                        <span class="bolinha-cor caramelo"></span>
+                        Caramelo
+                    </div>
+
+                    <p class="tamanhos">
+                        📏 Tamanhos disponíveis:
+                        <strong>35 ao 40</strong>
+                    </p>
+
+                    <span class="preco-antigo">
+                        De R$ 619,90
+                    </span>
+
+                    <p class="preco">
+                        R$ 404,70
+                    </p>
+
+                    <span class="pix">
+                        💚 Oferta especial
+                    </span>
+
+                    <a
+                        class="btn-whatsapp"
+                        href="https://wa.me/5511999999999?text=Olá!%20Tenho%20interesse%20na%20Texana%20Western%20Marrom."
+                        target="_blank"
+                    >
+                        💬 Comprar pelo WhatsApp
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUTO 3 -->
+
+            <div class="card-produto">
+
+                <div class="imagem-produto">
+
+                    <span class="etiqueta">
+                        BLACK COUNTRY
+                    </span>
+
+                    <img
+                        src="https://www.botastexanasbruto.com.br/image/cache/catalog/BTF259/bota-texana-em-couro-all-black-a-laser-glitter-preto-btf259-01-800x800.jpg"
+                        alt="Bota Texana Feminina Preta"
+                    >
+
+                </div>
+
+                <div class="info-produto">
+
+                    <h3>
+                        Texana All Black
+                    </h3>
+
+                    <p class="detalhes">
+                        Couro legítimo • Design preto •
+                        Detalhes a laser • Solado resistente
+                    </p>
+
+                    <div class="cor">
+                        Cor:
+                        <span class="bolinha-cor preto"></span>
+                        Preto
+                    </div>
+
+                    <p class="tamanhos">
+                        📏 Tamanhos disponíveis:
+                        <strong>34 ao 40</strong>
+                    </p>
+
+                    <span class="preco-antigo">
+                        De R$ 549,90
+                    </span>
+
+                    <p class="preco">
+                        R$ 429,90
+                    </p>
+
+                    <span class="pix">
+                        💚 5% OFF no Pix
+                    </span>
+
+                    <a
+                        class="btn-whatsapp"
+                        href="https://wa.me/5511999999999?text=Olá!%20Tenho%20interesse%20na%20Texana%20All%20Black."
+                        target="_blank"
+                    >
+                        💬 Comprar pelo WhatsApp
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUTO 4 -->
+
+            <div class="card-produto">
+
+                <div class="imagem-produto">
+
+                    <img
+                        src="https://www.rocallevest.com.br/calcados/bota-texana-western-em-couro-cano-medio-bordada-solis-brasil-paro-marrom-e-preta"
+                        alt="Bota Texana Country Bordada"
+                    >
+
+                </div>
+
+                <div class="info-produto">
+
+                    <h3>
+                        Texana Country Premium
+                    </h3>
+
+                    <p class="detalhes">
+                        Couro • Bordado western •
+                        Cano médio • Acabamento premium
+                    </p>
+
+                    <div class="cor">
+                        Cor:
+                        <span class="bolinha-cor marrom"></span>
+                        Marrom
+                    </div>
+
+                    <p class="tamanhos">
+                        📏 Tamanhos disponíveis:
+                        <strong>34 ao 39</strong>
+                    </p>
+
+                    <span class="preco-antigo">
+                        De R$ 599,90
+                    </span>
+
+                    <p class="preco">
+                        R$ 449,90
+                    </p>
+
+                    <span class="pix">
+                        💚 5% OFF no Pix
+                    </span>
+
+                    <a
+                        class="btn-whatsapp"
+                        href="https://wa.me/5511999999999?text=Olá!%20Tenho%20interesse%20na%20Texana%20Country%20Premium."
+                        target="_blank"
+                    >
+                        💬 Comprar pelo WhatsApp
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             BANNER
+        ========================== -->
+
+        <section class="banner">
+
+            <h2>
+                🤎 Vista sua atitude.
+            </h2>
+
+            <p>
+                Botas feitas para quem não passa despercebida.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         RODAPÉ
+    ========================== -->
+
+    <footer>
+
+        <p>
+            👢 <strong>Brutal & Elegante</strong>
+        </p>
+
+        <p>
+            Botas Texanas Femininas
+        </p>
+
+        <p>
+            © 2026 - Todos os direitos reservados
+        </p>
+
+    </footer>
+
+</body>
+</html>
